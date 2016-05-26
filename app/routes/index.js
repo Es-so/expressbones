@@ -11,7 +11,7 @@ module.exports = function(Router)
   {
     var Websitetitle = coreconfig.title;
 
-    res.render('index',{pageData :{title:Websitetitle}});
+    res.render('index');
   })
 
   .post(function(req, res)

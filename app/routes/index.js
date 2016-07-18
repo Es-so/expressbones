@@ -1,6 +1,5 @@
 "use strict";
-var indexmodel = require('../model/index');
-var coreconfig = require('../config/core');
+var userModel = require('../model/userModel');
 
 
 module.exports = function(Router)
@@ -9,9 +8,10 @@ module.exports = function(Router)
   Router.route('/')
   .get(function(req, res)
   {
-    var Websitetitle = coreconfig.title;
-
-    res.render('index');
+    userModel.getLastActiveUsernames((usernames) =>
+    {
+      res.render('index',{users : usernames});
+    });
   })
 
   .post(function(req, res)

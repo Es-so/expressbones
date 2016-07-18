@@ -4,4 +4,27 @@ html, body
   width: 100%;
   margin: 0;
   padding: 0;
+  color : white;
+  background: #34495e;
+  font-family: 'Roboto', sans-serif;
+  font-size: 32px;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+main
+{
+  width: 60%;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+}
+
+main div
+{
+  width: 50%;
+  padding: 20px;
+  overflow: auto;
 }

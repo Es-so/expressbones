@@ -1,12 +1,12 @@
 "use strict";
-var coreconfig = require('./core');
+var config = require('./core');
 
 module.exports = function(mongoose)
 {
-  mongoose.connect('mongodb://localhost:27017/' + coreconfig.dbname);
+  mongoose.connect(config.dburl);
   var db = mongoose.connection;
 
-  db.on('error', console.error.bind(console, 'connection error:'));
+  db.on('error', console.error.bind(console, 'connection error : '));
   db.once('open', function(){console.log('sucessfully connected to the db');});
 
 };

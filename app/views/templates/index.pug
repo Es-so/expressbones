@@ -2,8 +2,21 @@ doctype html
 html(lang="en")
   head
     link(href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', rel='stylesheet', type='text/css')
+    link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
     link(href='./css/custom.css', rel='stylesheet')
     title expressbones
   body
-    h1 welcome to expressbones
+    main
+      div
+        h1 Welcome to expressbones.
+        br
+        h2 Those users come from the backend :
+          br
+          ul
+            each val, index in users
+              li= '- ' + index
+        br
+        br
+        br
+        img(src="https://cdn.meme.am/instances/60677654.jpg")
     script(src="./js/custom.js")

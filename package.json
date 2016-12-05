@@ -1,7 +1,7 @@
 {
   "name": "expressbones",
-  "version": "1.0.0",
-  "description": "a tiny express structure",
+  "version": "1.1.0",
+  "description": "a very good express structure for anything you want",
   "main": "app.js",
   "port": 3000,
   "scripts": {
@@ -14,12 +14,14 @@
     "JS"
   ],
   "author": "neolectron",
-  "license": "ISC",
+  "license": "GNU GPL 3.0",
   "dependencies": {
-    "body-parser": "^1.15.1",
-    "express": "^4.13.4",
-    "mongoose": "^4.4.17",
-    "morgan": "^1.7.0",
-    "pug": "^2.0.0-alpha7"
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "mongoose": "^4.7.1",
+    "pug": "^2.0.0-beta6"
+  },
+  "devDependencies": {
+    "morgan": "^1.7.0"
   }
 }

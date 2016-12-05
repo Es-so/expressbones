@@ -1,11 +1,11 @@
 module.exports = function(Router)
 {
-
   Router.route('/')
 
   .get(function(req, res)
   {
-    res.render('./pages/loginRegister');
+
+    res.send('you GET /');
   })
 
   .post(function(req, res)

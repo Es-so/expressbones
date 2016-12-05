@@ -1,4 +1,3 @@
-"use strict";
 var mongoose = require('mongoose');
 var User     = require('../db/userDb');
 

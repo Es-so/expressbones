@@ -8,8 +8,7 @@ var Router          = express.Router();
 //-----------------------------------static-------------------------------------
 app.use(express.static('public'));
 //-----------------------------------dev logs-----------------------------------
-if(config.node_env == 'developpement')
-app.use(require('morgan')('dev'));
+(config.node_env == 'developpement') && app.use(require('morgan')('dev'));
 //------------------------------------------------------------------------------
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
@@ -18,6 +17,7 @@ app.use('/', Router);
 
 //-----------------------------------enable routes------------------------------
 require('./routes/index')(Router);
+require('./routes/login')(Router);
 require('./routes/notfound')(Router);
 //-----------------------------------start--------------------------------------
 app.listen(config.port, function()

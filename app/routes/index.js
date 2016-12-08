@@ -5,7 +5,7 @@ module.exports = function(Router)
 
   .get(function(req, res)
   {
-    res.render('./pages/loginRegister');
+    res.render('./pages/home');
   })
 
   .post(function(req, res)

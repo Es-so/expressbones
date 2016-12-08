@@ -1,20 +1,8 @@
 {
   "name": "expressbones",
   "version": "1.1.0",
-  "description": "a very good express structure for anything you want",
+  "description": "a tiny optimised structure for expressJs",
   "main": "app.js",
-  "port": 3000,
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "cd app && node app.js"
-  },
-  "keywords": [
-    "Express",
-    "Mongo",
-    "JS"
-  ],
-  "author": "neolectron",
-  "license": "GNU GPL 3.0",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
@@ -23,5 +11,29 @@
   },
   "devDependencies": {
     "morgan": "^1.7.0"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd app && node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neolectron/expressbones.git"
+  },
+  "keywords": [
+    "express",
+    "js",
+    "structure",
+    "bones",
+    "optimised",
+    "mongo",
+    "passport",
+    "MVC"
+  ],
+  "author": "neolectron",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/neolectron/expressbones/issues"
+  },
+  "homepage": "https://github.com/neolectron/expressbones#readme"
 }

@@ -2,13 +2,45 @@ doctype html
 html(lang="en")
   head
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', rel='stylesheet', type='text/css')
+    //- link(href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css', rel='stylesheet', type='text/css')
     link(href='https://fonts.googleapis.com/css?family=Roboto', rel='stylesheet')
     link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
     link(rel='stylesheet', href='https://code.getmdl.io/1.2.1/material.indigo-pink.min.css')
     link(href='./css/custom.css', rel='stylesheet')
     title ExpressBones
   body
-    block content
+    .mdl-layout.mdl-js-layout.mdl-layout--fixed-header
+      header.mdl-layout__header
+        .mdl-layout__header-row
+          // Title
+          span.mdl-layout-title ExpressBones
+          // Add spacer, to align navigation to the right
+          .mdl-layout-spacer
+          // Navigation. We hide it in small screens.
+          nav.mdl-navigation.mdl-layout--large-screen-only
+            a.mdl-navigation__link(href='') Link
+            a.mdl-navigation__link(href='') Link
+            a.mdl-navigation__link(href='') Link
+            a.mdl-navigation__link(href='') Link
+      .mdl-layout__drawer
+        span.mdl-layout-title ExpressBones
+        nav.mdl-navigation
+          a.mdl-navigation__link(href='/register')
+            i.material-icons.menu-icon person_add
+            | Register
+          a.mdl-navigation__link(href='/login')
+            i.material-icons.menu-icon person
+            | Login
+          a.mdl-navigation__link(href='https://github.com/neolectron',target="_blank")
+            i.material-icons.menu-icon open_in_new
+            | Github
+          a.mdl-navigation__link(href='#')
+            i.material-icons.menu-icon bookmark
+            | Link
+      main.mdl-layout__content
+        .page-content
+          block content
+          // Your content goes here
     script(defer='', src='https://code.getmdl.io/1.2.1/material.min.js')
+    script(src='https://unpkg.com/axios/dist/axios.min.js')
     script(src="./js/custom.js")

@@ -1,21 +1,28 @@
-/*html, body
+html, body
 {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  color : black;
   background: #f1f1f1;
   font-family: 'Roboto', sans-serif;
-  font-size: 32px;
-}*/
-
-.demo-layout-transparent {
-  background: url('https://getmdl.io/assets/demos/transparent.jpg') center / cover;
 }
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
-  color: white;
+
+.page-content
+{
+  padding-top: 48px;
+}
+section
+{
+  max-width: 860px;
+}
+
+.menu-icon
+{
+  margin-right: 20px;
+}
+
+.mdl-card__actions
+{
+  border-top: 1px solid rgba(0,0,0,0.12);
 }

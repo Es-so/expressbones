@@ -13,7 +13,7 @@ html(lang="en")
       header.mdl-layout__header
         .mdl-layout__header-row
           // Title
-          span.mdl-layout-title ExpressBones
+          a.mdl-layout-title(href="/") ExpressBones
           // Add spacer, to align navigation to the right
           .mdl-layout-spacer
           // Navigation. We hide it in small screens.
@@ -23,14 +23,14 @@ html(lang="en")
             a.mdl-navigation__link(href='') Link
             a.mdl-navigation__link(href='') Link
       .mdl-layout__drawer
-        span.mdl-layout-title ExpressBones
+        a.mdl-layout-title(href="/") ExpressBones
         nav.mdl-navigation
-          a.mdl-navigation__link(href='/register')
-            i.material-icons.menu-icon person_add
-            | Register
           a.mdl-navigation__link(href='/login')
             i.material-icons.menu-icon person
             | Login
+          a.mdl-navigation__link(href='/register')
+            i.material-icons.menu-icon person_add
+            | Register
           a.mdl-navigation__link(href='https://github.com/neolectron',target="_blank")
             i.material-icons.menu-icon open_in_new
             | Github

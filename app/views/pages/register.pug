@@ -1,0 +1,23 @@
+extends ../templates/index
+
+block content
+    section.section--center.mdl-grid.mdl-grid--no-spacing
+        .mdl-card.mdl-cell.mdl-cell--3-offset.mdl-cell--6-col.mdl-shadow--2dp
+            .mdl-card__supporting-text(style="text-align:center")
+                h4 Register
+                i.material-icons(style="font-size:100px") account_circle
+                form(method="POST", action="/api/register")
+                    .loginFields
+                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                            input#loginfield.mdl-textfield__input(type='text',name='loginfield')
+                            label.mdl-textfield__label(for='loginfield') Username
+                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                            input#pwfield.mdl-textfield__input(type='password',name='pwfield')
+                            label.mdl-textfield__label(for='pwfield') Password
+                        .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+                            input#repwfield.mdl-textfield__input(type='password',name='repwfield')
+                            label.mdl-textfield__label(for='repwfield') Repeat password
+                    button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--accent
+                        | Register
+            .mdl-card__actions
+                a.mdl-button(href="") Something is broken !

@@ -1,10 +1,10 @@
 module.exports = function(Router)
 {
-  Router.route('/login')
+  Router.route('/register')
 
   .get(function(req, res)
   {
-    res.render('./pages/login');
+    res.render('./pages/register');
   })
 
   .post(function(req, res)

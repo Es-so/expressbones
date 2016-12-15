@@ -18,6 +18,7 @@ app.use('/', Router);
 //-----------------------------------enable routes------------------------------
 require('./routes/index')(Router);
 require('./routes/login')(Router);
+require('./routes/register')(Router);
 require('./routes/notfound')(Router);
 //-----------------------------------start--------------------------------------
 app.listen(config.port, function()

@@ -1,6 +1,7 @@
-//------------------------------------Strategies--------------------------------
+//------------------------------------Local Strategy--------------------------------
 var User = require('../../database/schemas/User');
-
+var passport = require('passport');
+var LocalStrategy = require('passport-local')
 
 
 var localLogin = function(req,username,password,done)
@@ -39,11 +40,11 @@ var localRegister = function(req, email, password, done)
       {
         // if there is no user with that email
         // create the user
-        var newUser               = new User();
+        var newUser                   = new User();
         
         // set the user's local credentials
-        newUser.auth.local.email  = email;
-        newUser.auth.local.password    = newUser.generateHash(password);
+        newUser.auth.local.email      = email;
+        newUser.auth.local.password   = newUser.generateHash(password);
 
         // save the user
         newUser.save(function(err)

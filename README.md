@@ -15,8 +15,8 @@ So I decided to make my own "Bones" series.
 
 ## Status
 
-This structure is **done**
-However I'll add stuff if it makes sense.
+This structure is **IN PROGRESS**
+[//]: # However I'll add stuff if it makes sense.
 
 ## Documentation
 

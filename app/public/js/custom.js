@@ -23,8 +23,14 @@
         if(event.target.elements[elem].nodeName == 'INPUT')
           AxiosReq.data[event.target.elements[elem].name] = event.target.elements[elem].value;
       }
+      
       console.log(AxiosReq);
-      axios(AxiosReq);
+      axios(AxiosReq).then(function(res)
+      {
+        console.log(res);
+        if(res.data.redirect)
+          location.href = res.data.redirect;
+      });
     })
   })
 

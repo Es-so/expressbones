@@ -14,13 +14,14 @@
       var AxiosReq =
       {
         method: event.target.method,
-        url:    event.target.action
+        url:    event.target.action,
+        data:   {}
       };
       
       for(elem in event.target.elements)
       {
         if(event.target.elements[elem].nodeName == 'INPUT')
-          AxiosReq[event.target.elements[elem].name] = event.target.elements[elem].value;
+          AxiosReq.data[event.target.elements[elem].name] = event.target.elements[elem].value;
       }
       console.log(AxiosReq);
       axios(AxiosReq);

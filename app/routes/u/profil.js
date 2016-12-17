@@ -4,7 +4,8 @@ module.exports = function(Router)
 
   .get(function(req, res)
   {
-    res.render('./pages/profil');
+    res.send("your profile")
+    // res.render('./pages/profil');
   })
 
   .post(function(req, res)

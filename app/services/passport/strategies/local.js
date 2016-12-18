@@ -16,7 +16,6 @@ function(req,username,password,done)
 {
   User.findOne({ 'auth.local.email': username } , function(err, user)
   {
-    console.log(err,user);
     if(err)
       return done(err);
     if(!user)
@@ -67,10 +66,7 @@ function(req, username, password, done)
         newUser.save(function(err)
         {
           if(err)
-          {
-            console.log(err)
             return err;
-          }
           return done(null, newUser);
         });
       }

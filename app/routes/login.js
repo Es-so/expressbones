@@ -13,8 +13,6 @@ module.exports = function(Router)
   {
     passport.authenticate('local-login',function(err,user,infos,wtf)
     {
-      console.log(err,user,infos,wtf);
-      
       if(err)
         return res.send(err);
       if(!user)

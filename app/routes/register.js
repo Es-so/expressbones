@@ -11,7 +11,6 @@ module.exports = function(Router)
 
   .post(function(req, res)
   {
-    console.log(req.body);
     if(!req.body.username || !req.body.password || !req.body.repassword)
       return res.json({status : 'NOK', message : 'missing fields'});
     else if(req.body.password !== req.body.repassword)

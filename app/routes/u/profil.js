@@ -4,8 +4,13 @@ module.exports = function(Router)
 
   .get(function(req, res)
   {
+    // console.log(req.isAuthenticated())
+    // console.log(req.session)
     if(req.isAuthenticated())
-      res.send("your profile")
+    {
+      console.log(req.user.email)
+      res.send(req.user.email + ' is your profile');
+    }
     else
       res.send(req.params.userTag + "'s profile");
     // res.render('./pages/profil');

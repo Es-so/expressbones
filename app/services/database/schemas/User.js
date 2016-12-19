@@ -2,10 +2,11 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcrypt')
 
 var User = new mongoose.Schema({
+  uid         : { type: Number , required: true, default: 0, index: true, unique: true},
+  email       : { type: String , required: true, lowercase: true, index: true, unique: true},
+  nickname    : { type: String , required: false,lowercase: true, index: true},
   firstname   : { type: String , required: false},
   lastname    : { type: String , required: false},
-  nickname    : { type: String , required: false, index: true},
-  email       : { type: String , required: true, index: true},
   auth        :
   {
     local       :

@@ -11,7 +11,7 @@ module.exports = function(Router)
 
   .post(function(req, res)
   {
-    if(!req.body.username || !req.body.password || !req.body.repassword)
+    if(!req.body.email || !req.body.password || !req.body.repassword)
       return res.json({status : 'NOK', message : 'missing fields'});
     else if(req.body.password !== req.body.repassword)
       return res.json({status : 'OK', message : 'your passwords does not match'});
@@ -27,10 +27,13 @@ module.exports = function(Router)
       req.logIn(user, function(err)
       {
         if(err)
+        {
+          console.log(err)
           return res.send(err);
+        }
 
         //What would you like to do on success
-        return res.json({status : 'OK', message : 'successfully registered', redirect : '/u/' + user.email });
+        return res.json({status : 'OK', message : 'successfully registered', redirect : '/u/' + user.uid });
       });
     })(req,res);
   });

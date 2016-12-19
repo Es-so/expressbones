@@ -9,22 +9,22 @@ module.exports = function(Router)
     res.render('./pages/login');
   })
 
-  .post(function(req, res, next)
+  .post(function(req, res)
   {
-    passport.authenticate('local-login',function(err,user,infos,wtf)
+    passport.authenticate('local-login',function(err,user,infos)
     {
       if(err)
-        return res.send(err);
+        return res.send({status: 'NOK', message : err});
       if(!user)
-        return res.send('login fail');
+        return res.json({status: 'NOK', message : 'login failed'});
 
       req.logIn(user, function(err)
       {
         if(err)
-          return res.send(err);
+          return res.send({status: 'NOK', message : err});
 
         //What would you like to do on success
-        return res.json({status: 'OK', message : 'successfully loggedIn', redirect : '/u/' + user.email});
+        return res.json({status: 'OK', message : 'successfully loggedIn', redirect : '/u/' + user.uid});
       });
     })(req,res);
   });

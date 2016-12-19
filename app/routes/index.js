@@ -5,7 +5,10 @@ module.exports = function(Router)
 
   .get(function(req, res)
   {
-    res.render('./pages/home');
+    if(req.isAuthenticated())
+      res.render('./pages/home-user.pug',{email: req.user.email});
+    else
+      res.render('./pages/home-guest.pug')
   })
 
   .post(function(req, res)

@@ -1,6 +1,7 @@
 //------------------------------------require-----------------------------------
 var config          = require('./config/core');
 var express         = require('express');
+var session         = require('express-session')
 var bodyParser      = require('body-parser');
 var passport        = require('passport');
 var app             = express();
@@ -14,6 +15,7 @@ app.use(express.static('public'));
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
 app.use(bodyParser.json())
+app.use(session(config.session))
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/', Router);
@@ -23,6 +25,7 @@ require('./services/database/init');
 //-----------------------------------choice 1 : enable routes explicitly--------
 require('./routes/index')(Router);
 require('./routes/login')(Router);
+require('./routes/logout')(Router);
 require('./routes/register')(Router);
 require('./routes/u/profil')(Router);
 require('./routes/notfound')(Router);

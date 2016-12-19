@@ -1,5 +1,5 @@
-var passport = require('passport');
-// require('../database/schemas/User');
+var passport  = require('passport');
+var User      = require('../database/schemas/User');
 
 //serialize userID in the session
 //we only serialize userID so the sessionSystem doesnt have to handle passwords etc...

@@ -8,13 +8,13 @@ var LocalStrategy = require('passport-local');
 //------------------LOGIN-------------------------------------------------
 passport.use('local-login', new LocalStrategy(
 {
-      usernameField : 'username',
+      usernameField : 'email',
       passwordField : 'password',
       passReqToCallback : true
 },
-function(req,username,password,done)
+function(req,email,password,done)
 {
-  User.findOne({ 'auth.local.email': username } , function(err, user)
+  User.findOne({ 'auth.local.email': email } , function(err, user)
   {
     if(err)
       return done(err);
@@ -30,11 +30,11 @@ function(req,username,password,done)
 //------------------REGISTER-----------------------------------------------
 passport.use('local-register', new LocalStrategy(
 {
-    usernameField : 'username',
+    usernameField : 'email',
     passwordField : 'password',
     passReqToCallback : true
 },
-function(req, username, password, done)
+function(req, email, password, done)
 {
   // asynchronous
   // User.findOne wont fire unless data is sent back
@@ -42,7 +42,7 @@ function(req, username, password, done)
   {
     // find a user whose email is the same as the forms email
     // we are checking to see if the user trying to login already exists
-    User.findOne({ 'auth.local.email' :  username }, function(err, user)
+    User.findOne({ 'auth.local.email' :  email }, function(err, user)
     {
       // if there are any errors, return the error
       if(err)
@@ -53,22 +53,26 @@ function(req, username, password, done)
         return done(null, false);
       else
       {
-        // if there is no user with that email
-        // create the user
-        var newUser                   = new User();
-        
-        // set the user's local credentials
-        newUser.email                 = username;
-        newUser.auth.local.email      = username;
-        newUser.auth.local.password   = newUser.generateHash(password);
-
-        // save the user
-        newUser.save(function(err)
+        User.count({}, function(err, nb) 
         {
-          if(err)
-            return err;
-          return done(null, newUser);
-        });
+          // if there is no user with that email
+          // create the user
+          var newUser                   = new User();
+          
+          // set the user's local credentials
+          newUser.email                 = email;
+          newUser.uid                   = nb;
+          newUser.auth.local.email      = email;
+          newUser.auth.local.password   = newUser.generateHash(password);
+
+          // save the user
+          newUser.save(function(err)
+          {
+            if(err)
+              return err;
+            return done(null, newUser);
+          });
+        })
       }
     });    
   });

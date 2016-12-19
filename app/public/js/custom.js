@@ -6,7 +6,6 @@
 
   document.querySelectorAll('form').forEach(function(form)
   {
-    console.log(form)
     form.addEventListener('submit',function(event)
     {
       event.preventDefault();
@@ -24,10 +23,10 @@
           AxiosReq.data[event.target.elements[elem].name] = event.target.elements[elem].value;
       }
       
-      console.log(AxiosReq);
+      console.log(AxiosReq,' is prepared');
       axios(AxiosReq).then(function(res)
       {
-        console.log(res);
+        console.log('res: ',res);
         if(res.data.redirect)
           location.href = res.data.redirect;
       });

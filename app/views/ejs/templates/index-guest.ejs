@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
+    <link href="./css/custom.css" rel="stylesheet">
+    <title>ExpressBones</title>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title--><a href="/" class="mdl-layout-title">ExpressBones</a>
+          <!-- Add spacer, to align navigation to the right-->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens.-->
+          <nav class="mdl-navigation mdl-layout--large-screen-only"><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a><a href="" class="mdl-navigation__link">Link</a></nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer"><a href="/" class="mdl-layout-title">ExpressBones</a>
+        <nav class="mdl-navigation">
+          <% if(user) %>
+          <a href="/logout" class="mdl-navigation__link"><i class="material-icons menu-icon">exit_to_app</i>Logout</a>
+          <% if(!user) { %>
+          <a href="/login" class="mdl-navigation__link"><i class="material-icons menu-icon">person</i>Login</a>
+          <a href="/register" class="mdl-navigation__link"><i class="material-icons menu-icon">person_add</i>Register</a>
+          <%}%>
+          <a href="https://github.com/neolectron" target="_blank" class="mdl-navigation__link"><i class="material-icons menu-icon">open_in_new</i>Github</a>
+          <a href="#" class="mdl-navigation__link"><i class="material-icons menu-icon">bookmark</i>Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <div class="page-content">
+          <!-- Your content goes here-->
+        </div>
+      </main>
+    </div>
+    <script defer="" src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/custom.js"></script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing">
+  <div class="mdl-card mdl-cell mdl-cell--3-offset mdl-cell--6-col mdl-shadow--2dp">
+    <div style="text-align:center" class="mdl-card__supporting-text">
+      <h4>Register</h4><i style="font-size:100px" class="material-icons">account_circle</i>
+      <form method="POST" action="/register">
+        <div class="loginFields">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="loginfield" type="email" name="email" required="required" class="mdl-textfield__input"/>
+            <label for="loginfield" class="mdl-textfield__label">Email</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="pwfield" type="password" name="password" required="required" class="mdl-textfield__input"/>
+            <label for="pwfield" class="mdl-textfield__label">Password</label>
+          </div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input id="repwfield" type="password" name="repassword" required="required" class="mdl-textfield__input"/>
+            <label for="repwfield" class="mdl-textfield__label">Repeat password</label>
+          </div>
+        </div>
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">Register</button>
+      </form>
+    </div>
+    <div class="mdl-card__actions"><a href="https://github.com/neolectron/expressbones/issues" target="_blank" class="mdl-button">Something is broken !</a></div>
+  </div>
+</section>

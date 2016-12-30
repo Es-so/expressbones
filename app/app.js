@@ -12,8 +12,8 @@ app.use(express.static('public'));
 //-----------------------------------dev logs-----------------------------------
 (config.node_env == 'developpement') && app.use(require('morgan')('dev'));
 //-----------------------------------vars and middlewares-----------------------
-app.set('view engine', 'pug');
-app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views/ejs');
 app.use(bodyParser.json())
 app.use(session(config.session))
 app.use(passport.initialize());

@@ -6,9 +6,9 @@ module.exports = function(Router)
   .get(function(req, res)
   {
     if(req.isAuthenticated())
-      res.render('./pages/home-user.pug',{email: req.user.email});
+      res.render('./pages/home',{email: req.user.email});
     else
-      res.render('./pages/home-guest.pug')
+      res.render('./pages/home')
   })
 
   .post(function(req, res)

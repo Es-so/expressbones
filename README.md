@@ -7,7 +7,7 @@ It's good to use ExpressBones with any app (MVC / non-MVC / MEAN-stack / etc).
 
 As a person who really values file structuring and organisation,
 i always try my best at finding the most intuitive/efficient way ordering data.
-Sometimes I the basic-exemple or the generators doesn't fit my needs or aren't intuitive enough,
+Sometimes the basic-exemple or the generators doesn't fit my needs or aren't intuitive enough,
 that's the point of this file structure.
 Folders matters.
 
